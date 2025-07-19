@@ -8,8 +8,36 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Portfolio theme colors */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    /* Brand colors for portfolio */
+    --portfolio-primary: 222 84% 4.9%;
+    --portfolio-secondary: 210 40% 96.1%;
+    --portfolio-accent: 142 76% 36%;
+    --portfolio-muted: 215.4 16.3% 46.9%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222, 84%, 4.9%) 0%, hsl(142, 76%, 36%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(142, 76%, 36%) 0%, hsl(171, 77%, 64%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(222, 84%, 4.9% / 0.1);
+    --shadow-medium: 0 8px 30px hsl(222, 84%, 4.9% / 0.15);
+    --shadow-strong: 0 20px 60px hsl(222, 84%, 4.9% / 0.2);
+    --shadow-glow: 0 0 30px hsl(142, 76%, 36% / 0.3);
+    
+    /* Glass effects */
+    --glass-bg: hsla(0, 0%, 100%, 0.1);
+    --glass-border: hsla(0, 0%, 100%, 0.2);
+    --glass-blur: blur(10px);
+    
+    /* Animations */
+    --animation-fast: 0.2s ease-out;
+    --animation-medium: 0.3s ease-out;
+    --animation-slow: 0.5s ease-out;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -58,6 +86,20 @@ All colors MUST be HSL.
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
+    
+    /* Dark mode adjustments */
+    --portfolio-primary: 210 40% 98%;
+    --portfolio-secondary: 217.2 32.6% 17.5%;
+    --portfolio-accent: 142 76% 36%;
+    --portfolio-muted: 215 20.2% 65.1%;
+    
+    /* Dark gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222, 84%, 4.9%) 0%, hsl(142, 76%, 36%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(217.2, 32.6%, 17.5%) 0%, hsl(222.2, 84%, 4.9%) 100%);
+    
+    /* Dark glass */
+    --glass-bg: hsla(222, 84%, 4.9%, 0.3);
+    --glass-border: hsla(210, 40%, 98%, 0.1);
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
