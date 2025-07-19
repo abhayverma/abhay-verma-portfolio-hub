@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon, Download } from 'lucide-react';
+import { useTheme } from "next-themes";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [darkMode, setDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -52,8 +53,7 @@ const Navigation = () => {
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
@@ -99,7 +99,7 @@ const Navigation = () => {
               onClick={toggleDarkMode}
               className="hover:text-portfolio-accent"
             >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
             <Button 
               variant="outline" 
@@ -126,7 +126,7 @@ const Navigation = () => {
               onClick={toggleDarkMode}
               className="hover:text-portfolio-accent"
             >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
             <Button
               variant="ghost"

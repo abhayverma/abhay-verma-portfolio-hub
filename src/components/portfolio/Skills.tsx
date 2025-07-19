@@ -90,37 +90,37 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 bg-portfolio-secondary/30">
+    <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Skills & Expertise</h2>
-          <p className="text-xl text-portfolio-muted max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">Skills & Expertise</h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Comprehensive technical expertise across the full stack, with deep knowledge in modern frameworks and cloud technologies.
           </p>
         </div>
 
         {/* Technical Skills */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 mb-16">
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-medium transition-all duration-300 animate-fade-in-up"
+              className="hover:shadow-medium transition-all duration-300 animate-fade-in-up border-border/50 bg-card/50 backdrop-blur-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-3 text-foreground">
                   <div className="p-2 bg-portfolio-accent/10 rounded-lg">
-                    <category.icon className="w-6 h-6 text-portfolio-accent" />
+                    <category.icon className="w-5 h-5 text-portfolio-accent" />
                   </div>
-                  {category.title}
+                  <span className="text-lg">{category.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-portfolio-muted">{skill.level}%</span>
+                      <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
                     </div>
                     <Progress 
                       value={skill.level} 
@@ -134,14 +134,14 @@ const Skills = () => {
         </div>
 
         {/* Domain Expertise */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <Card className="animate-slide-in-left">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <Card className="animate-slide-in-left border-border/50 bg-card/50 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="flex items-center gap-3">
+              <CardTitle className="flex items-center gap-3 text-foreground">
                 <div className="p-2 bg-portfolio-accent/10 rounded-lg">
-                  <Layers className="w-6 h-6 text-portfolio-accent" />
+                  <Layers className="w-5 h-5 text-portfolio-accent" />
                 </div>
-                Domain Expertise
+                <span className="text-xl">Domain Expertise</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -150,7 +150,7 @@ const Skills = () => {
                   <Badge 
                     key={index} 
                     variant="outline" 
-                    className="justify-start p-3 text-sm hover:bg-portfolio-accent hover:text-white transition-colors"
+                    className="justify-start p-3 text-sm hover:bg-portfolio-accent hover:text-white transition-colors border-border/50"
                   >
                     {domain}
                   </Badge>
@@ -159,26 +159,26 @@ const Skills = () => {
             </CardContent>
           </Card>
 
-          <Card className="animate-slide-in-right">
+          <Card className="animate-slide-in-right border-border/50 bg-card/50 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="flex items-center gap-3">
+              <CardTitle className="flex items-center gap-3 text-foreground">
                 <div className="p-2 bg-portfolio-accent/10 rounded-lg">
-                  <Badge className="w-6 h-6 text-portfolio-accent" />
+                  <Badge className="w-5 h-5 text-portfolio-accent" />
                 </div>
-                Certifications & Specializations
+                <span className="text-xl">Certifications & Specializations</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-portfolio-secondary/50 rounded-lg">
+                  <div key={index} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
                     <div className="w-2 h-2 bg-portfolio-accent rounded-full"></div>
-                    <span className="font-medium">{cert}</span>
+                    <span className="font-medium text-foreground">{cert}</span>
                   </div>
                 ))}
-                <div className="mt-6 p-4 bg-gradient-accent rounded-lg text-white">
+                <div className="mt-6 p-4 bg-gradient-to-r from-portfolio-accent to-portfolio-accent/80 rounded-lg text-white">
                   <h4 className="font-semibold mb-2">Architecture Expertise</h4>
-                  <p className="text-sm opacity-90">
+                  <p className="text-sm opacity-90 leading-relaxed">
                     Specialized in designing scalable microservices, implementing CI/CD pipelines, 
                     and building high-performance applications with 99.9% uptime.
                   </p>

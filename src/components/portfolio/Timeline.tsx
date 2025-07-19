@@ -67,20 +67,20 @@ const Timeline = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="timeline" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Career Timeline</h2>
-          <p className="text-xl text-portfolio-muted max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">Career Timeline</h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             11+ years of experience building scalable solutions across diverse domains including FinTech, Life Sciences, HR, and Supply Chain.
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-5xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-portfolio-accent to-portfolio-primary opacity-30"></div>
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-portfolio-accent to-portfolio-accent/30"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={exp.id} 
@@ -88,47 +88,50 @@ const Timeline = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-6 w-4 h-4 rounded-full border-4 ${
+                <div className={`absolute left-2 md:left-6 w-4 h-4 rounded-full border-4 z-10 ${
                   exp.isActive 
-                    ? 'bg-portfolio-accent border-portfolio-accent animate-pulse' 
-                    : 'bg-background border-portfolio-primary'
+                    ? 'bg-portfolio-accent border-portfolio-accent animate-glow' 
+                    : 'bg-background border-portfolio-accent/60'
                 }`}></div>
 
                 {/* Content Card */}
-                <div className="ml-20">
-                  <Card className="hover:shadow-medium transition-all duration-300 border-l-4 border-l-portfolio-accent">
-                    <CardHeader>
-                      <div className="flex flex-wrap items-start justify-between gap-4">
-                        <div>
-                          <CardTitle className="text-xl mb-2">{exp.title}</CardTitle>
-                          <div className="flex items-center gap-4 text-portfolio-muted mb-2">
-                            <div className="flex items-center gap-1">
-                              <Briefcase size={16} />
-                              <span className="font-semibold">{exp.company}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Calendar size={16} />
-                              <span>{exp.period}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <MapPin size={16} />
-                              <span>{exp.location}</span>
-                            </div>
-                          </div>
+                <div className="ml-10 md:ml-20">
+                  <Card className="hover:shadow-medium transition-all duration-300 border-l-4 border-l-portfolio-accent bg-card/50 backdrop-blur-sm">
+                    <CardHeader className="pb-3">
+                      <div className="space-y-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                          <CardTitle className="text-lg md:text-xl text-foreground">{exp.title}</CardTitle>
                           {exp.isActive && (
-                            <Badge className="bg-portfolio-accent text-white">Current Position</Badge>
+                            <Badge className="bg-portfolio-accent text-white w-fit animate-pulse">
+                              Current Position
+                            </Badge>
                           )}
+                        </div>
+                        
+                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Briefcase size={14} className="text-portfolio-accent" />
+                            <span className="font-semibold text-foreground">{exp.company}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Calendar size={14} className="text-portfolio-accent" />
+                            <span>{exp.period}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin size={14} className="text-portfolio-accent" />
+                            <span>{exp.location}</span>
+                          </div>
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-portfolio-muted mb-6 leading-relaxed">
+                    <CardContent className="pt-0">
+                      <p className="text-muted-foreground mb-6 leading-relaxed text-sm md:text-base">
                         {exp.description}
                       </p>
                       
-                      <div className="space-y-2">
-                        <h4 className="font-semibold text-sm">Technologies Used:</h4>
-                        <div className="flex flex-wrap gap-2">
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-sm text-foreground">Technologies Used:</h4>
+                        <div className="flex flex-wrap gap-1.5">
                           {exp.technologies.map((tech, techIndex) => (
                             <Badge 
                               key={techIndex} 
