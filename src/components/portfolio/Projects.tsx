@@ -10,7 +10,29 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "AWS Solutions Architecture",
+      title: "Core Platform Development",
+      company: "L7 Informatics",
+      category: "ERP Systems",
+      description: "Developed and maintained full-stack features for enterprise life sciences software using Flask, Vue3, and PostgreSQL in a Scrum environment. Optimized API payloads by 30-50% and implemented critical bug fixes, enhancing overall system performance and reliability. Contributed to core platform modules including CLI integration, data pipelines, scheduling, and licensing.",
+      technologies: ["Python", "Vue 3", "PostgreSQL", "TypeScript", "Celery", "Redis", "Jira", "Bitbucket", "Flask", "Docker", "AG-Grid", "Vitest", "Pytest", "Figma", "AI", "ESP", "MES", "LIMS", "ELN", "SDMS", "CDMS", "CTMS", "eTMF", "eConsent", "eSource", "Cypress", "Istanbul", "heatmaps"],
+      metrics: {
+        performance: "60% faster rendering",
+        reliability: "Core modules optimized",
+        productivity: "40% improved data access"
+      },
+      highlights: [
+        "Built and optimized core modules across LIMS, MES, ELN, and signature flows",
+        "Implemented resource sorting, filtering, and asset management for containers, equipment, and kits",
+        "Improved instruction rendering speed by 60% through inline style refactoring",
+        "Developed Cypress + Istanbul coverage heatmaps for early issue detection",
+        "Contributed to CLI integration, data pipelines, scheduling, and licensing modules"
+      ],
+      featured: true,
+      domain: "Life Sciences"
+    },
+    {
+      id: 2,
+      title: "Solutions Architect (Contract)",
       company: "Zero Dimension Tech Solutions",
       category: "Cloud Architecture",
       description: "Architected scalable AWS solutions with secure payment gateway integrations using Stripe. Implemented high-performance microservices that improved transaction processing by 300% and reduced system downtime by 95%.",
@@ -21,12 +43,12 @@ const Projects = () => {
         conversion: "25% increase in conversions"
       },
       featured: true,
-      domain: "FinTech"
+      domain: "Consulting Services"
     },
     {
-      id: 2,
+      id: 3,
       title: "Microservices & Queue Architecture",
-      company: "ZONO",
+      company: "ZONO TradeTech",
       category: "Backend Systems",
       description: "Developed microservices with batch queuing architecture, reducing API response time from 3000ms to 200ms. Built robust scheduler engines for digital payments and invoice tracking systems.",
       technologies: ["Node.js", "Microservices", "SQS", "TypeScript", "NestJS", "PostgreSQL"],
@@ -36,12 +58,12 @@ const Projects = () => {
         scalability: "10x concurrent user capacity"
       },
       featured: true,
-      domain: "FinTech"
+      domain: "Supply Chain"
     },
     {
-      id: 3,
+      id: 4,
       title: "API Performance Optimization",
-      company: "VALUEFY",
+      company: "VALUEFY PVT LTD",
       category: "Performance",
       description: "Optimized legacy APIs reducing average response time from 500ms to 100ms. Led cross-functional teams and created comprehensive technical documentation for stakeholders.",
       technologies: ["Node.js", "Loopback", "MySQL", "Redis", "ElasticSearch", "Angular"],
@@ -51,12 +73,12 @@ const Projects = () => {
         satisfaction: "90% client satisfaction"
       },
       featured: false,
-      domain: "Enterprise"
+      domain: "FinTech"
     },
     {
-      id: 4,
+      id: 5,
       title: "MEAN Stack Data Platform",
-      company: "3IOLOGY",
+      company: "3IOLOGY SOLUTIONS LLP",
       category: "Full Stack",
       description: "Built mobile-first data provider application using MEAN stack, improving data access speed by 50%. Developed custom ERP systems with seamless third-party integrations.",
       technologies: ["MongoDB", "Express", "Angular", "Node.js", "GraphQL", "AWS"],
@@ -69,9 +91,9 @@ const Projects = () => {
       domain: "Data Analytics"
     },
     {
-      id: 5,
+      id: 6,
       title: "AI Chatbot & E-commerce Platform",
-      company: "SKARMA",
+      company: "SKARMA PVT LTD",
       category: "AI/ML",
       description: "Developed intelligent chatbot using Facebook APIs and Dialogflow for sports engagement. Created e-commerce portals with API integrations, boosting online sales by 45%.",
       technologies: ["Dialogflow", "Facebook API", "Laravel", "WordPress", "PHP", "MySQL"],
@@ -84,7 +106,7 @@ const Projects = () => {
       domain: "E-commerce"
     },
     {
-      id: 6,
+      id: 7,
       title: "Web Scraping & Price Comparison",
       company: "TECHFARM GLOBAL",
       category: "Data Engineering",
@@ -100,7 +122,7 @@ const Projects = () => {
     }
   ];
 
-  const filters = ['All', 'Cloud Architecture', 'Backend Systems', 'Full Stack', 'AI/ML', 'Performance', 'Data Engineering'];
+  const filters = ['All', 'Cloud Architecture', 'Backend Systems', 'Full Stack', 'AI/ML', 'Performance', 'Data Engineering', 'ERP Systems', 'Consulting Services', 'Life Sciences', 'Supply Chain', 'FinTech', 'Data Analytics', 'E-commerce'];
 
   const filteredProjects = activeFilter === 'All' 
     ? projects 

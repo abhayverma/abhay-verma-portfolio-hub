@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon, Download } from 'lucide-react';
 import { useTheme } from "next-themes";
+import { downloadResume } from '@/lib/utils';
+
+const SCROLL_TO_SECTION_DELAY = 300; // ms
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,13 +12,16 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  // Navigation items
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'timeline', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
+    // { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'contact', label: 'Contact' },
+    { id: 'faq-section', label: 'FAQ' }
   ];
 
   useEffect(() => {
@@ -41,20 +47,41 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+  const expandSection = (sectionId: string) => {
+  // Fire a global event so CollapsibleSection knows it should expand
+  window.dispatchEvent(
+    new CustomEvent("collapsible-section", { 
+      detail: { id: sectionId, action: "expand" } 
+    })
+  );
+};
+
+const scrollToSection = (sectionId: string) => {
+  expandSection(sectionId);
+
+  const element = document.getElementById(sectionId);
+  if (element) {
+    // Small delay so expansion finishes before scroll
+    setTimeout(() => {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
-    }
-    setIsOpen(false);
-  };
+    }, SCROLL_TO_SECTION_DELAY);
+  }
+
+  setIsOpen(false); // close mobile menu if open
+};
 
   const toggleDarkMode = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
+
+  const handleNavItemClick = (item: typeof navItems[0]) => {
+    setIsOpen(false);
+    scrollToSection(item.id);
+  };
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -65,12 +92,21 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div 
+          <button
+            type="button"
             onClick={() => scrollToSection('home')}
-            className="font-bold text-xl cursor-pointer hover:text-portfolio-accent transition-colors"
+            className="font-bold text-xl cursor-pointer hover:text-portfolio-accent transition-colors bg-transparent border-none p-0"
+            tabIndex={0}
+            aria-label="Go to Home"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                scrollToSection('home');
+              }
+            }}
           >
             Abhay <span className="text-portfolio-accent">Verma</span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
@@ -79,7 +115,7 @@ const Navigation = () => {
                 key={item.id}
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavItemClick(item)}
                 className={`transition-colors ${
                   activeSection === item.id 
                     ? 'text-portfolio-accent bg-portfolio-accent/10' 
@@ -105,7 +141,7 @@ const Navigation = () => {
               variant="outline" 
               size="sm"
               className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-            >
+            onClick={downloadResume}>
               <Download className="mr-2" size={16} />
               Resume
             </Button>
@@ -148,7 +184,7 @@ const Navigation = () => {
                   <Button
                     key={item.id}
                     variant="ghost"
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => handleNavItemClick(item)}
                     className={`justify-start transition-colors ${
                       activeSection === item.id 
                         ? 'text-portfolio-accent bg-portfolio-accent/10' 

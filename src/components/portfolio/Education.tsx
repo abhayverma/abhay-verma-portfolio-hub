@@ -6,23 +6,24 @@ const Education = () => {
   const education = [
     {
       degree: "Master of Business Administration",
-      field: "Major: Artificial Intelligence | Minor: Machine Learning",
+      field: "Major: Block Chain Management",
       institution: "Dr DY Patil Institute of Management & Research",
       location: "Pune, India",
       year: "2025",
-      status: "In Progress",
-      description: "Advanced studies in AI applications in business, machine learning algorithms, and data-driven decision making. Focus on emerging technologies and their impact on modern business strategies.",
+      status: "Completed",
+      description: "Specialization in blockchain management with a strong foundation in strategic management, finance, marketing, and entrepreneurship, emphasizing the application of emerging technologies like blockchain, cryptography, and cloud services in modern business.",
       achievements: [
-        "Specialization in AI/ML Business Applications",
-        "Research in Enterprise AI Implementation",
+        "Specialization in Block Chain Management",
+        "Case Study: Blockchain Solutions for Transparent and Secure Charity Donations",
+        "MetaMask, Remix IDE, Sepolia Etherscan (SepoliaETH), Solidity, Smart Contracts, Cryptocurrency",
         "Leadership and Strategic Management"
       ]
     },
     {
       degree: "Bachelor of Engineering",
       field: "Major: Computer Science",
-      institution: "Ballarpur Institute of Technology",
-      location: "Ballarpur, India", 
+      institution: "Ballarpur Institute of Technology (IC: 4188)",
+      location: "Nagpur,  Maharashtra, India", 
       year: "2013",
       status: "Completed",
       description: "Comprehensive foundation in computer science principles, software engineering, and programming fundamentals. Strong emphasis on practical application and project-based learning.",
@@ -36,30 +37,34 @@ const Education = () => {
   ];
 
   const certifications = [
-    {
-      title: "AWS Solutions Architect Associate",
-      issuer: "Amazon Web Services",
-      year: "2023",
-      skills: ["Cloud Architecture", "AWS Services", "Scalability", "Security"]
-    },
-    {
-      title: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      year: "2022", 
-      skills: ["NoSQL", "Database Design", "Performance Optimization"]
-    },
-    {
-      title: "Google Cloud Professional",
-      issuer: "Google Cloud",
-      year: "2022",
-      skills: ["GCP Services", "DevOps", "Containers", "Kubernetes"]
-    },
-    {
-      title: "React Advanced Certification",
-      issuer: "Meta/Facebook",
-      year: "2021",
-      skills: ["React.js", "State Management", "Performance", "Testing"]
-    }
+    // {
+    //   id: 1,
+    //   title: "AWS Solutions Architect Associate",
+    //   issuer: "Amazon Web Services",
+    //   year: "2023",
+    //   skills: ["Cloud Architecture", "AWS Services", "Scalability", "Security"]
+    // },
+    // {
+    //   id: 2,
+    //   title: "MongoDB Certified Developer",
+    //   issuer: "MongoDB University",
+    //   year: "2022", 
+    //   skills: ["NoSQL", "Database Design", "Performance Optimization"]
+    // },
+    // {
+    //   id: 3,
+    //   title: "Google Cloud Professional",
+    //   issuer: "Google Cloud",
+    //   year: "2022",
+    //   skills: ["GCP Services", "DevOps", "Containers", "Kubernetes"]
+    // },
+    // {
+    //   id: 4,
+    //   title: "React Advanced Certification",
+    //   issuer: "Meta/Facebook",
+    //   year: "2021",
+    //   skills: ["React.js", "State Management", "Performance", "Testing"]
+    // }
   ];
 
   const continuousLearning = [
@@ -162,18 +167,18 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Professional Certifications */}
-        <div className="mb-16">
+        {/* Professional Expertise */}
+        <div className="mb-16" style={{ display: 'none' }}>
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
             <Award className="text-portfolio-accent" />
-            Professional Certifications
+            Professional Expertise
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
+            {certifications.map((cert) => (
               <Card 
-                key={index} 
+                key={cert.id} 
                 className="hover:shadow-medium transition-all duration-300 animate-slide-in-left"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${cert.id * 0.1}s` }}
               >
                 <CardHeader>
                   <CardTitle className="text-lg">{cert.title}</CardTitle>

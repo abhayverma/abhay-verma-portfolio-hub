@@ -6,16 +6,27 @@ const Timeline = () => {
   const experiences = [
     {
       id: 1,
-      title: "Solutions Architect",
+      title: "Senior Full Stack Developer",
+      company: "L7 Informatics",
+      period: "2024 – Current",
+      location: "Bangalore, Karnataka, India",
+      category: "ERP Systems",
+      description: "Developed and maintained full-stack features for enterprise life sciences software using Flask, Vue3, and PostgreSQL in a Scrum environment. Optimized API payloads by 30-50% and implemented critical bug fixes, enhancing overall system performance and reliability. Contributed to core platform modules including CLI integration, data pipelines, scheduling, and licensing.",
+      technologies: ["Python", "Vue 3", "PostgreSQL", "TypeScript", "Celery", "Redis", "Jira", "Bitbucket", "Flask", "Docker", "AG-Grid", "Vitest", "Pytest", "Figma", "AI"],
+      isActive: true,
+    },
+    {
+      id: 2,
+      title: "Solutions Architect (Contract)",
       company: "Zero Dimension Tech Solutions",
-      period: "2023 – Current",
-      location: "Dehradun, UK, India",
-      description: "Architected scalable AWS solutions, integrating secure payment gateways like Stripe ensuring seamless transactions. Led development of high-performance Laravel and React apps, boosting user experience and conversion rates by 25%. Streamlined deployment processes with CI/CD pipelines, reducing deployment time by 30% and minimizing downtime.",
+      period: "2023 – 2024",
+      location: "Bangalore, KA, India",
+      description: "Architect scalable AWS solutions, integrating secure payment gateways like Stripe ensuring seamless transactions. Led development of high-performance Laravel and React apps, boosting user experience and conversion rates by 25%. Streamlined deployment processes with CI/CD pipelines, reducing deployment time by 30% and minimizing downtime.",
       technologies: ["Node.js", "ReactJS", "MySQL", "TypeScript", "Laravel", "Git", "Docker", "Express", "Winston", "Yup", "Parser", "JWT", "SNS", "Moment", "EJS", "Redux", "JSX", "ESLint", "Tsconfig", "CLI", "ClickUp", "CloudWatch Events", "AWS"],
       isActive: true
     },
     {
-      id: 2,
+      id: 3,
       title: "Senior Software Engineer",
       company: "ZONO",
       period: "2020 – 2023",
@@ -25,7 +36,7 @@ const Timeline = () => {
       isActive: false
     },
     {
-      id: 3,
+      id: 4,
       title: "Senior Software Developer Engineer",
       company: "VALUEFY",
       period: "2019 – 2020",
@@ -35,8 +46,8 @@ const Timeline = () => {
       isActive: false
     },
     {
-      id: 4,
-      title: "Senior Full Stack Developer",
+      id: 5,
+      title: "Full Stack Developer",
       company: "3IOLOGY",
       period: "2018 – 2019",
       location: "Mumbai, India",
@@ -45,7 +56,7 @@ const Timeline = () => {
       isActive: false
     },
     {
-      id: 5,
+      id: 6,
       title: "Full Stack Developer & Project Manager",
       company: "SKARMA",
       period: "2016 – 2018",
@@ -55,7 +66,7 @@ const Timeline = () => {
       isActive: false
     },
     {
-      id: 6,
+      id: 7,
       title: "Co-founder and CTO",
       company: "TECHFARM GLOBAL",
       period: "2013 – 2016",

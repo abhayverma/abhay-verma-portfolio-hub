@@ -2,15 +2,17 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react';
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { downloadResume } from '@/lib/utils';
 
 const Hero = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
   const titles = [
-    "Full Stack Developer",
+    "Sr. Full Stack Developer",
     "Solutions Architect", 
     "Tech Leader",
-    "Innovation Driver"
+    "AI & Blockchain Enthusiast"
   ];
 
   useEffect(() => {
@@ -63,15 +65,15 @@ const Hero = () => {
                 </div>
                 
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Experienced full-stack developer with 11+ years of expertise in Node.js, React, AWS, and scalable microservices architecture. 
-                  Specializing in FinTech, Life Sciences, and enterprise solutions.
+                  Experienced full-stack developer with 11+ years of expertise across Node.js, Python, Vue3, React8, Angular6, Dapps, DAOs, EVM, Hyper ledger Fabric, and AI integrations. 
+                  Proven track record in delivering scalable solutions and leading tech teams to success.
                 </p>
 
                 {/* Contact Info */}
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start text-sm">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin size={16} className="text-portfolio-accent" />
-                    <span>Dehradun, UK, India</span>
+                    <span>Bangalore, KA, India</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Phone size={16} className="text-portfolio-accent" />
@@ -79,7 +81,7 @@ const Hero = () => {
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Mail size={16} className="text-portfolio-accent" />
-                    <span>aabhay.v@gmail.com</span>
+                    <span>abhay.verma@hotmail.com</span>
                   </div>
                 </div>
 
@@ -89,7 +91,11 @@ const Hero = () => {
                     <Mail className="mr-2" size={20} />
                     Get In Touch
                   </Button>
-                  <Button variant="outline" size="lg" className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                    onClick={downloadResume}>
                     <Download className="mr-2" size={20} />
                     Download Resume
                   </Button>
@@ -97,16 +103,39 @@ const Hero = () => {
 
                 {/* Social Links */}
                 <div className="flex gap-3 justify-center lg:justify-start pt-4">
-                  <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300">
-                    <Github size={24} />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300">
-                    <Linkedin size={24} />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300">
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="icon"
+                  className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300"
+                >
+                  <a href="https://github.com/abhayverma" target="_blank" rel="noopener noreferrer">
+                    <SiGithub size={24} />
+                  </a>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="icon"
+                  className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300"
+                >
+                  <a href="https://www.linkedin.com/in/abhayverma" target="_blank" rel="noopener noreferrer">
+                    <SiLinkedin size={24} />
+                  </a>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="icon"
+                  className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300"
+                >
+                  <a href="https://abhayverma.com" target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={24} />
-                  </Button>
-                </div>
+                  </a>
+                </Button>
+              </div>
               </div>
             </div>
 
