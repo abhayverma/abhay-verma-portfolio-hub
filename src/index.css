@@ -144,4 +144,8 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-r from-portfolio-accent/90 to-portfolio-accent/70;
+  }
 }

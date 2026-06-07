@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@portfolio/shared-ui/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}

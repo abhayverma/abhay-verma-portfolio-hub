@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@portfolio/shared-ui";
+import { Badge } from "@portfolio/shared-ui";
 import { Progress } from "@/components/ui/progress";
 import { Code, Database, Cloud, Layers, Globe, Smartphone } from 'lucide-react';
 

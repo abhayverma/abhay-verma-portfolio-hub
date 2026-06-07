@@ -1,28 +1,29 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@portfolio/shared-ui";
+import { Badge } from "@portfolio/shared-ui";
 import { GraduationCap, Award, BookOpen, Calendar, MapPin } from 'lucide-react';
 
 const Education = () => {
   const education = [
     {
       degree: "Master of Business Administration",
-      field: "Major: Artificial Intelligence | Minor: Machine Learning",
+      field: "Major: Block Chain Management",
       institution: "Dr DY Patil Institute of Management & Research",
       location: "Pune, India",
       year: "2025",
-      status: "In Progress",
-      description: "Advanced studies in AI applications in business, machine learning algorithms, and data-driven decision making. Focus on emerging technologies and their impact on modern business strategies.",
+      status: "Completed",
+      description: "Specialization in blockchain management with a strong foundation in strategic management, finance, marketing, and entrepreneurship, emphasizing the application of emerging technologies like blockchain, cryptography, and cloud services in modern business.",
       achievements: [
-        "Specialization in AI/ML Business Applications",
-        "Research in Enterprise AI Implementation",
+        "Specialization in Block Chain Management",
+        "Case Study: Blockchain Solutions for Transparent and Secure Charity Donations",
+        "MetaMask, Remix IDE, Sepolia Etherscan (SepoliaETH), Solidity, Smart Contracts, Cryptocurrency",
         "Leadership and Strategic Management"
       ]
     },
     {
       degree: "Bachelor of Engineering",
       field: "Major: Computer Science",
-      institution: "Ballarpur Institute of Technology",
-      location: "Ballarpur, India", 
+      institution: "Ballarpur Institute of Technology (IC: 4188)",
+      location: "Nagpur,  Maharashtra, India", 
       year: "2013",
       status: "Completed",
       description: "Comprehensive foundation in computer science principles, software engineering, and programming fundamentals. Strong emphasis on practical application and project-based learning.",
@@ -37,51 +38,55 @@ const Education = () => {
 
   const certifications = [
     {
-      title: "AWS Solutions Architect Associate",
+      id: 1,
+      title: "Generative AI Fundamentals",
+      issuer: "Google Cloud Skills Boost",
+      year: "2026",
+      skills: ["Gemini API", "LLMs", "Prompt Engineering", "Cloud Architecture"]
+    },
+    {
+      id: 2,
+      title: "Back End Development and APIs",
+      issuer: "freeCodeCamp",
+      year: "2025", 
+      skills: ["Node.js", "Express", "Microservices", "Security"]
+    },
+    {
+      id: 3,
+      title: "Python (Advanced) Skills Certification",
+      issuer: "HackerRank",
+      year: "2026",
+      skills: ["Python 3", "Data Structures", "Algorithms", "Optimization"]
+    },
+    {
+      id: 4,
+      title: "AWS Cloud Quest: Cloud Practitioner",
       issuer: "Amazon Web Services",
-      year: "2023",
-      skills: ["Cloud Architecture", "AWS Services", "Scalability", "Security"]
-    },
-    {
-      title: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      year: "2022", 
-      skills: ["NoSQL", "Database Design", "Performance Optimization"]
-    },
-    {
-      title: "Google Cloud Professional",
-      issuer: "Google Cloud",
-      year: "2022",
-      skills: ["GCP Services", "DevOps", "Containers", "Kubernetes"]
-    },
-    {
-      title: "React Advanced Certification",
-      issuer: "Meta/Facebook",
       year: "2021",
-      skills: ["React.js", "State Management", "Performance", "Testing"]
+      skills: ["Cloud Compute", "Storage", "AWS Services", "Deployment"]
     }
   ];
 
   const continuousLearning = [
     {
-      topic: "Microservices Architecture",
-      platform: "Udemy",
-      focus: "Scalable system design and implementation"
+      topic: "Applied Generative AI & Prompt Engineering",
+      platform: "Self-Directed / Google AI Studio",
+      focus: "Integrating LLM APIs for practical workflow automation and tooling."
     },
     {
-      topic: "DevOps & CI/CD",
-      platform: "Coursera",
-      focus: "Automation and deployment strategies"
+      topic: "Advanced Frontend Architecture",
+      platform: "Production Implementation",
+      focus: "Mastering Vue3 reactivity patterns and complex Ag-Grid caching strategies."
     },
     {
-      topic: "Machine Learning",
-      platform: "edX MIT",
-      focus: "AI/ML applications in software development"
+      topic: "E-Commerce Deployment & Optimization",
+      platform: "Active Project (Acharwali)",
+      focus: "CMS configuration, hosting optimization, and seamless deployment pipelines."
     },
     {
-      topic: "Blockchain Technology",
-      platform: "Blockchain Council",
-      focus: "Decentralized applications and smart contracts"
+      topic: "Agile Execution & Strategic Planning",
+      platform: "Venture Roadmapping",
+      focus: "Developing execution frameworks and digital-to-physical brand planning."
     }
   ];
 
@@ -104,7 +109,7 @@ const Education = () => {
           <div className="space-y-8">
             {education.map((edu, index) => (
               <Card 
-                key={index} 
+                key={edu.degree} 
                 className="border-l-4 border-l-portfolio-accent hover:shadow-medium transition-all duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
@@ -145,9 +150,9 @@ const Education = () => {
                   <div className="space-y-2">
                     <h4 className="font-semibold text-sm">Key Focus Areas:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {edu.achievements.map((achievement, achieveIndex) => (
+                      {edu.achievements.map((achievement) => (
                         <Badge 
-                          key={achieveIndex} 
+                          key={achievement} 
                           variant="secondary" 
                           className="text-xs"
                         >
@@ -162,18 +167,18 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Professional Certifications */}
+        {/* Professional Expertise */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
             <Award className="text-portfolio-accent" />
-            Professional Certifications
+            Professional Expertise
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
+            {certifications.map((cert) => (
               <Card 
-                key={index} 
+                key={cert.id} 
                 className="hover:shadow-medium transition-all duration-300 animate-slide-in-left"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${cert.id * 0.1}s` }}
               >
                 <CardHeader>
                   <CardTitle className="text-lg">{cert.title}</CardTitle>
@@ -186,9 +191,9 @@ const Education = () => {
                   <div className="space-y-2">
                     <h4 className="font-semibold text-sm">Skills Covered:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {cert.skills.map((skill, skillIndex) => (
+                      {cert.skills.map((skill) => (
                         <Badge 
-                          key={skillIndex} 
+                          key={skill} 
                           variant="secondary" 
                           className="text-xs hover:bg-portfolio-accent hover:text-white transition-colors"
                         >
@@ -212,7 +217,7 @@ const Education = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {continuousLearning.map((learning, index) => (
               <Card 
-                key={index} 
+                key={learning.topic} 
                 className="text-center hover:shadow-soft transition-all duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -240,17 +245,17 @@ const Education = () => {
               <GraduationCap className="w-12 h-12 mx-auto mb-4 opacity-90" />
               <h3 className="text-2xl font-bold mb-4">Learning Philosophy</h3>
               <p className="text-lg opacity-90 leading-relaxed">
-                "Technology evolves rapidly, and continuous learning is essential for staying relevant. 
-                I believe in combining formal education with hands-on experience, certifications, and 
-                staying connected with the developer community to ensure I'm always growing and 
-                delivering cutting-edge solutions."
+                "I believe in adopting change by staying hands-on—learning directly from experience, online resources, and the community. 
+                Curiosity is the true driver of growth, and patience is what actually helps us get there faster. 
+                I trust in existence and the natural timing of things; we cannot control when opportunities present themselves, but we can control our response. 
+                When the right moment arrives, I believe in welcoming it openly and tackling it with deep commitment and genuine effort."
               </p>
               <div className="mt-6 flex justify-center gap-4">
                 <Badge className="bg-white/20 text-white border-white/30">
-                  11+ Years Experience
+                  12+ Years Experience
                 </Badge>
                 <Badge className="bg-white/20 text-white border-white/30">
-                  25+ Certifications
+                  4+ Certifications
                 </Badge>
                 <Badge className="bg-white/20 text-white border-white/30">
                   Continuous Learner

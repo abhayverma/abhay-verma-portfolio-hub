@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# Abhay Verma – Portfolio Ecosystem
 
-## Project info
+A modern web application monorepo built with a high-performance frontend architecture, structured for scalability, micro-app distribution, and robust component management.
 
-**URL**: https://lovable.dev/projects/9e8fb60d-ed1d-4908-86f0-457929cff80a
+## Tech Stack
 
-## How can I edit this code?
+This project leverages a highly optimized development ecosystem:
+* **Vite** – Next-generation frontend tooling for ultra-fast hot module replacement (HMR) and optimized production builds.
+* **React** – Declarative, component-based user interface library.
+* **TypeScript** – Static typing to ensure code reliability, maintainability, and self-documenting architecture.
+* **shadcn/ui** – Beautifully designed, accessible components built on top of Radix UI primitives.
+* **Tailwind CSS** – Utility-first CSS framework for rapid and highly customizable UI development.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Monorepo Architecture
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9e8fb60d-ed1d-4908-86f0-457929cff80a) and start prompting.
+This repository utilizes npm workspaces to manage a modular, multi-domain ecosystem:
+* **Root (`src/`)**: The main portfolio landing page (`abhayverma.com`).
+* **Shared UI (`packages/shared-ui/`)**: A centralized library containing global layouts (Navigation, Footer) and UI primitives shared across all applications to ensure design consistency.
+* **Micro-Apps (`apps/`)**: Isolated frontend tools and engineering workstations designed to be deployed to individual subdomains (e.g., `finance.abhayverma.com`).
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Local Development Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Ensure you have [Node.js](https://nodejs.org/) (LTS recommended) and npm installed.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+### 1. Clone the Repository
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <https://github.com/abhayverma/abhay-verma-portfolio-hub>
+cd <abhay-verma-portfolio-hub>
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2. Install Dependencies
+Because this is a monorepo, a single install command from the root will safely link the `shared-ui` package and bootstrap all micro-apps simultaneously:
+```sh
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 3. Start the Development Servers
+You can boot up different parts of the ecosystem using npm workspace flags.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+**To run the main portfolio application:**
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+**To run a specific micro-app (e.g., the Finance Tax Simulator):**
+```sh
+npm run dev -w apps/tax-simulator
+```
+The server will boot up with hot-reloading enabled. Open your browser and navigate to the local server URL provided in the terminal (typically `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 4. Production Build
+To build the main application for production deployment:
+```sh
+npm run build
+```
+To build a specific workspace micro-app:
+```sh
+npm run build -w apps/tax-simulator
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## License
 
-## What technologies are used for this project?
+Copyright (c) 2026 Abhay Verma. All rights reserved.
 
-This project is built with:
+This project and its source code are strictly proprietary. Unauthorized copying, modification, distribution, sub-licensing, or public use of these files, via any medium, is strictly prohibited.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9e8fb60d-ed1d-4908-86f0-457929cff80a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+As per GitHub's Global Terms of Service, forking the repository for personal architectural viewing purposes within the GitHub ecosystem is permitted. However, no rights or explicit permissions are granted to copy, alter, execute, or redistribute the source code for external, commercial, or alternative personal deployment purposes.
+````</abhay-verma-portfolio-hub></https://github.com/abhayverma/abhay-verma-portfolio-hub>

@@ -1,8 +1,13 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Filter, Star, TrendingUp, Users, DollarSign } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@portfolio/shared-ui";
+import { Button } from "@portfolio/shared-ui";
+import { Badge } from "@portfolio/shared-ui";
+import { 
+  ExternalLink, 
+  Filter, 
+  Star, 
+  Code2,
+} from 'lucide-react';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -10,97 +15,117 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "AWS Solutions Architecture",
-      company: "Zero Dimension Tech Solutions",
-      category: "Cloud Architecture",
-      description: "Architected scalable AWS solutions with secure payment gateway integrations using Stripe. Implemented high-performance microservices that improved transaction processing by 300% and reduced system downtime by 95%.",
-      technologies: ["AWS", "Node.js", "React", "Stripe", "Docker", "CI/CD", "Lambda"],
+      title: "Life Sciences Micro-Apps & AI Integration",
+      company: "L7 Informatics",
+      category: "Full Stack",
+      description: "Contributed to the full-stack architecture of life-science micro-apps, implementing precise caching strategies to preserve reactive state. Spearheaded internal AI adoption by analyzing LLM behaviors to introduce advanced prompting methodologies for engineering workflows.",
+      technologies: ["Python", "Vue3", "PostgreSQL", "TypeScript", "Celery", "Redis", "Flask", "Docker", "AG-Grid", "AI"],
       metrics: {
-        performance: "300% faster processing",
-        uptime: "99.9% system reliability", 
-        conversion: "25% increase in conversions"
+        performance: "30-50% API boost",
+        efficiency: "Unlocked team velocity",
+        innovation: "Strategic AI adoption"
       },
+      highlights: [
+        "Led global collaboration sprint execution and requirement gathering with US & Europe counterparts",
+        "Implemented precise caching strategies and preserved reactive state in Vue3/AG-Grid",
+        "Analyzed LLM behaviors to optimize engineering workflows and stakeholder communication"
+      ],
       featured: true,
-      domain: "FinTech"
+      domain: "Life Sciences"
     },
     {
       id: 2,
-      title: "Microservices & Queue Architecture",
-      company: "ZONO",
-      category: "Backend Systems",
-      description: "Developed microservices with batch queuing architecture, reducing API response time from 3000ms to 200ms. Built robust scheduler engines for digital payments and invoice tracking systems.",
-      technologies: ["Node.js", "Microservices", "SQS", "TypeScript", "NestJS", "PostgreSQL"],
+      title: "Serverless Cloud Data Pipelines",
+      company: "Zero Dimension Tech Solutions",
+      category: "Cloud Architecture",
+      description: "Streamlined cloud-based structural data pipelines and CMS integrations for mid-sized brands, maintaining strict uptime utilizing AWS and GCP serverless architectures.",
+      technologies: ["NodeJS", "Python", "ReactJS", "AWS Lambda", "SQS", "Docker", "CloudWatch Events", "GCP"],
       metrics: {
-        performance: "93% response time improvement",
-        reliability: "40% increase in system reliability",
-        scalability: "10x concurrent user capacity"
+        uptime: "99% system reliability",
+        scale: "Serverless pipelines",
+        delivery: "CMS Integrations"
       },
       featured: true,
-      domain: "FinTech"
+      domain: "Consulting Services"
     },
     {
       id: 3,
-      title: "API Performance Optimization",
-      company: "VALUEFY",
-      category: "Performance",
-      description: "Optimized legacy APIs reducing average response time from 500ms to 100ms. Led cross-functional teams and created comprehensive technical documentation for stakeholders.",
-      technologies: ["Node.js", "Loopback", "MySQL", "Redis", "ElasticSearch", "Angular"],
+      title: "Supply Chain ERP Integrations",
+      company: "ZONO TradeTech",
+      category: "Backend Systems",
+      description: "Architected AWS Lambda-driven data ingestion models for seamless third-party ERP/SAP enterprise data syncs. Implemented custom batch-queuing to track batches and eliminate manual re-ingestion loops.",
+      technologies: ["NodeJS", "TypeScript", "AWS Lambda", "SQS", "NestJS", "MySQL", "Docker", "React Native"],
       metrics: {
-        performance: "80% response time reduction",
-        efficiency: "35% operational improvement",
-        satisfaction: "90% client satisfaction"
+        latency: "3000ms to 200ms reduction",
+        reliability: "40% reliability scaled",
+        integrity: "Zero data debt loops"
       },
-      featured: false,
-      domain: "Enterprise"
+      featured: true,
+      domain: "Supply Chain"
     },
     {
       id: 4,
-      title: "MEAN Stack Data Platform",
-      company: "3IOLOGY",
-      category: "Full Stack",
-      description: "Built mobile-first data provider application using MEAN stack, improving data access speed by 50%. Developed custom ERP systems with seamless third-party integrations.",
-      technologies: ["MongoDB", "Express", "Angular", "Node.js", "GraphQL", "AWS"],
+      title: "Enterprise Wealth Management Platform",
+      company: "VALUEFY",
+      category: "FinTech",
+      description: "Delivered a highly performant wealth management system for international portfolios across Arab nations. Engineered custom loan-based investment tracking outside the core product scope.",
+      technologies: ["NodeJS", "MySQL", "Loopback3", "Redis", "ElasticSearch", "Angular6", "Docker"],
       metrics: {
-        speed: "50% faster data access",
-        efficiency: "35% operational improvement",
-        mobile: "100% mobile responsiveness"
+        speed: "500ms to 100ms response",
+        scale: "International portfolios",
+        delivery: "On-site HDFC integration"
+      },
+      featured: false,
+      domain: "FinTech"
+    },
+    {
+      id: 5,
+      title: "International Trade Data Platform",
+      company: "3IOLOGY",
+      category: "ERP Systems",
+      description: "Spearheaded a large-scale international trade data platform as the sole technical lead. Built custom scalable CMS and ERP systems from scratch managing the entire software lifecycle.",
+      technologies: ["NodeJS", "MongoDB", "Angular6", "Laravel", "PHP", "AWS"],
+      metrics: {
+        efficiency: "35% operational boost",
+        scale: "End-to-End lifecycle",
+        leadership: "Sole technical lead"
       },
       featured: false,
       domain: "Data Analytics"
     },
     {
-      id: 5,
-      title: "AI Chatbot & E-commerce Platform",
-      company: "SKARMA",
+      id: 6,
+      title: "Cross-Platform AI Chatbots",
+      company: "Skarma",
       category: "AI/ML",
-      description: "Developed intelligent chatbot using Facebook APIs and Dialogflow for sports engagement. Created e-commerce portals with API integrations, boosting online sales by 45%.",
-      technologies: ["Dialogflow", "Facebook API", "Laravel", "WordPress", "PHP", "MySQL"],
+      description: "Directed technical operations and end-to-end development lifecycles for cross-platform AI chatbot architectures and custom CMS solutions.",
+      technologies: ["AI Chatbots", "CMS Development", "Cross-platform Architecture"],
       metrics: {
-        engagement: "60% user engagement increase",
-        sales: "45% online sales boost",
-        automation: "80% query automation"
+        delivery: "End-to-end lifecycles",
+        tech: "AI architecture",
+        management: "Project operations"
       },
       featured: false,
-      domain: "E-commerce"
+      domain: "AI Solutions"
     },
     {
-      id: 6,
-      title: "Web Scraping & Price Comparison",
-      company: "TECHFARM GLOBAL",
-      category: "Data Engineering",
-      description: "Built intelligent web scraper for US-based price comparison platform, increasing data accuracy by 70%. Developed custom CMS/CRM solutions for client management.",
-      technologies: ["Python", "Casper.js", "PhantomJS", "Laravel", "Bootstrap", "AWS"],
+      id: 7,
+      title: "Founding Engineering Operations",
+      company: "Techfarm Global",
+      category: "Engineering Leadership",
+      description: "Co-founded and directed end-to-end software development operations, building and mentoring a team of emerging engineering talent to align technical execution with business goals.",
+      technologies: ["System Architecture", "Team Building", "Tech Leadership", "Mentoring"],
       metrics: {
-        accuracy: "70% data accuracy improvement",
-        coverage: "10M+ products tracked",
-        automation: "95% process automation"
+        growth: "Team mentorship",
+        strategy: "Business alignment",
+        execution: "End-to-end operations"
       },
       featured: false,
-      domain: "Data Engineering"
+      domain: "Leadership"
     }
   ];
 
-  const filters = ['All', 'Cloud Architecture', 'Backend Systems', 'Full Stack', 'AI/ML', 'Performance', 'Data Engineering'];
+  const filters = ['All', 'Cloud Architecture', 'Backend Systems', 'Full Stack', 'AI/ML', 'Engineering Leadership', 'ERP Systems', 'Consulting Services', 'Life Sciences', 'Supply Chain', 'FinTech', 'Data Analytics', 'AI Solutions'];
 
   const filteredProjects = activeFilter === 'All' 
     ? projects 
@@ -181,7 +206,7 @@ const Projects = () => {
                       View Details
                     </Button>
                     <Button variant="ghost" size="sm">
-                      <Github size={16} />
+                      <Code2 size={16} />
                     </Button>
                   </div>
                 </CardContent>
@@ -269,37 +294,13 @@ const Projects = () => {
                       <ExternalLink size={14} />
                     </Button>
                     <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Github size={14} />
+                      <Code2 size={14} />
                     </Button>
                   </div>
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Project Statistics */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <Card className="text-center p-6">
-            <TrendingUp className="mx-auto text-portfolio-accent mb-2" size={32} />
-            <div className="text-2xl font-bold">50+</div>
-            <div className="text-sm text-portfolio-muted">Projects Delivered</div>
-          </Card>
-          <Card className="text-center p-6">
-            <Users className="mx-auto text-portfolio-accent mb-2" size={32} />
-            <div className="text-2xl font-bold">25+</div>
-            <div className="text-sm text-portfolio-muted">Team Members Led</div>
-          </Card>
-          <Card className="text-center p-6">
-            <DollarSign className="mx-auto text-portfolio-accent mb-2" size={32} />
-            <div className="text-2xl font-bold">$2M+</div>
-            <div className="text-sm text-portfolio-muted">Value Generated</div>
-          </Card>
-          <Card className="text-center p-6">
-            <Star className="mx-auto text-portfolio-accent mb-2" size={32} />
-            <div className="text-2xl font-bold">98%</div>
-            <div className="text-sm text-portfolio-muted">Client Satisfaction</div>
-          </Card>
         </div>
       </div>
     </section>

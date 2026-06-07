@@ -1,37 +1,50 @@
-import Navigation from "@/components/portfolio/Navigation";
+import { Navigation, Footer } from "@portfolio/shared-ui";
 import Hero from "@/components/portfolio/Hero";
 import Timeline from "@/components/portfolio/Timeline";
-import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
+import MicroApps from "@/components/portfolio/MicroApps";
 import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
-import Footer from "@/components/portfolio/Footer";
+import Faq from "@/components/portfolio/Faq";
+import FloatingQR from "@/components/ui/FloatingQR";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navigation />
       <main>
         <section id="home">
           <Hero />
         </section>
+
         <section id="timeline">
           <Timeline />
         </section>
-        <section id="skills">
-          <Skills />
-        </section>
+
         <section id="projects">
           <Projects />
         </section>
+
+        <section id="microapps">
+          <MicroApps />
+        </section>
+
         <section id="education">
           <Education />
         </section>
+
         <section id="contact">
           <Contact />
         </section>
+
+        <section id="faq-section" className="py-20 bg-muted/20">
+          <div className="max-h-[500px] overflow-y-auto pr-3 scrollbar-thin scrollbar-thumb-portfolio-accent/60 scrollbar-track-transparent rounded-xl">
+            <Faq />
+          </div>
+        </section>
       </main>
       <Footer />
+      <FloatingQR />
     </div>
   );
 };
