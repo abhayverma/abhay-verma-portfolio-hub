@@ -1,7 +1,20 @@
+# Allow all legitimate search engine crawlers
+# Specific entries are optional when the site is fully open,
+# but they can help document modern crawlers explicitly.
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: LinkedInBot
 Allow: /
 
 User-agent: Twitterbot

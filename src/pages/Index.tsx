@@ -7,7 +7,6 @@ import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
 import Faq from "@/components/portfolio/Faq";
 import FloatingQR from "@/components/ui/FloatingQR";
-import AIPage from "./AIPage";
 
 const Index = () => {
   return (
@@ -38,10 +37,6 @@ const Index = () => {
           <div className="max-h-[500px] overflow-y-auto pr-3 scrollbar-thin scrollbar-thumb-portfolio-accent/60 scrollbar-track-transparent rounded-xl">
             <Faq />
           </div>
-        </section>
-
-        <section id="contact">
-          <AIPage />
         </section>
       </main>
       <Footer />

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, ArrowUp, Mail, Phone, MapPin, Coffee, Calendar } from 'lucide-react';
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import qrImage from "@/assets/qr-coffee.png";
 
 const Footer = () => {
@@ -46,14 +46,14 @@ const Footer = () => {
                 Abhay <span className="text-portfolio-accent">Verma</span>
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Full Stack Developer with 11+ years of experience building scalable solutions 
-                across FinTech, Life Sciences, and enterprise domains. Passionate about creating 
-                innovative technology solutions that drive business growth and user satisfaction.
+                Engineering-first technical leader specializing in scalable, cloud-native architectures across ERP, CMS, Supply Chain, FinTech, and Life Sciences(ESP). 
+                Driven by a commitment to bridging deep technical strategy with business growth, optimizing team velocity, and navigating cross-border collaborations. 
+                Let's build something impactful together.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 <Badge className="bg-portfolio-accent text-white">Available for Projects</Badge>
                 <Badge variant="outline" className="text-white border-white/30">Remote Friendly</Badge>
-                <Badge variant="outline" className="text-white border-white/30">11+ Years Experience</Badge>
+                <Badge variant="outline" className="text-white border-white/30">12+ Years Experience</Badge>
               </div>
             </div>
 
@@ -61,19 +61,19 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail size={16} />
-                <a href="mailto:abhay.verma@hotmail.com" className="hover:text-portfolio-accent transition-colors">
-                  abhay.verma@hotmail.com
+                <a href="mailto:aabhay.v@gmail.com" className="hover:text-portfolio-accent transition-colors">
+                  aabhay.v@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone size={16} />
-                <a href="tel:+918999509155" className="hover:text-portfolio-accent transition-colors">
-                  +91 899.950.9155
+                <a href="tel:+919673305368" className="hover:text-portfolio-accent transition-colors">
+                  +91 967.330.5368
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPin size={16} />
-                <span>Bangalore, KA, India</span>
+                <span>India | Open to Remote & Relocation</span>
               </div>
             </div>
 
@@ -81,12 +81,12 @@ const Footer = () => {
             <div className="flex gap-4 mt-6">
               <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-portfolio-accent border border-white/20" asChild>
                 <a href="https://github.com/abhayverma" target="_blank" rel="noopener noreferrer">
-                  <SiGithub size={20} />
+                  <FaGithub size={20} />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-portfolio-accent border border-white/20" asChild>
                 <a href="https://linkedin.com/in/socialabhay" target="_blank" rel="noopener noreferrer">
-                  <SiLinkedin size={20} />
+                  <FaLinkedin size={20} />
                 </a>
               </Button>
 

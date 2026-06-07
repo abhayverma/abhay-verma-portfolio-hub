@@ -1,73 +1,51 @@
-# Welcome to your Lovable project
+# Application Starter Template
 
-## Project info
+A modern web application built with a high-performance frontend architecture, structured for scalability and robust state management.
 
-**URL**: https://lovable.dev/projects/9e8fb60d-ed1d-4908-86f0-457929cff80a
+## Tech Stack
 
-## How can I edit this code?
+This project leverages a highly optimized development ecosystem:
+*   **Vite** – Next-generation frontend tooling for ultra-fast hot module replacement (HMR) and optimized production builds.
+*   **React** – Declarative, component-based user interface library.
+*   **TypeScript** – Static typing to ensure code reliability, maintainability, and self-documenting architecture.
+*   **shadcn/ui** – Beautifully designed, accessible components built on top of Radix UI primitives.
+*   **Tailwind CSS** – Utility-first CSS framework for rapid and highly customizable UI development.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Local Development Setup
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9e8fb60d-ed1d-4908-86f0-457929cff80a) and start prompting.
+Ensure you have [Node.js](https://nodejs.org/) (LTS recommended) and npm installed.
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+### 1. Clone the Repository
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+git clone <YOUR_REPOSITORY_GIT_URL>
+cd <YOUR_PROJECT_DIRECTORY_NAME>
 ```
 
-**Edit a file directly in GitHub**
+### 2. Install Dependencies
+```sh
+npm install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Start the Local Development Server
+```sh
+npm run dev
+```
+The server will boot up with hot-reloading enabled. Open your browser and navigate to the local server URL provided in the terminal (typically `http://localhost:5173`).
 
-**Use GitHub Codespaces**
+### 4. Production Build
+To build the application for production deployment:
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
+Copyright (c) 2026 Abhay Verma. All rights reserved.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project and its source code are strictly proprietary. Unauthorized copying, modification, distribution, sub-licensing, or public use of these files, via any medium, is strictly prohibited.
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9e8fb60d-ed1d-4908-86f0-457929cff80a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+As per GitHub's Global Terms of Service, forking the repository for personal architectural viewing purposes within the GitHub ecosystem is permitted. However, no rights or explicit permissions are granted to copy, alter, execute, or redistribute the source code for external, commercial, or alternative personal deployment purposes.

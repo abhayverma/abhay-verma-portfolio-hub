@@ -3,17 +3,25 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react';
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { downloadResume } from '@/lib/utils';
+
+const titles = [
+  "Sr. Full Stack Developer",
+  "Growth-Minded Tech Collaborator", 
+  "Deep Engineering Problem Solver",
+  "Global Solutions Strategist"
+];
+
+const stats = [
+  { label: "Years Experience", value: "12+" },
+  { label: "Projects Completed", value: "40+" },
+  { label: "Technologies", value: "15+" },
+  { label: "Domains", value: "5+" }
+];
 
 const Hero = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
-  const titles = [
-    "Sr. Full Stack Developer",
-    "Solutions Architect", 
-    "Tech Leader",
-    "AI & Blockchain Enthusiast"
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,13 +29,6 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
-  const stats = [
-    { label: "Years Experience", value: "11+" },
-    { label: "Projects Completed", value: "50+" },
-    { label: "Technologies", value: "25+" },
-    { label: "Domains", value: "5+" }
-  ];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-portfolio-secondary/20">
@@ -45,7 +46,7 @@ const Hero = () => {
             <div className="lg:col-span-7 text-center lg:text-left animate-fade-in-up">
               <div className="space-y-6">
                 <Badge variant="outline" className="mb-4 bg-portfolio-accent/10 border-portfolio-accent/20 text-portfolio-accent dark:text-portfolio-accent backdrop-blur-sm">
-                  Available for New Opportunities
+                  Available for Global Opportunities
                 </Badge>
                 
                 {/* Split title for better typography */}
@@ -65,23 +66,24 @@ const Hero = () => {
                 </div>
                 
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Experienced full-stack developer with 11+ years of expertise across Node.js, Python, Vue3, React8, Angular6, Dapps, DAOs, EVM, Hyper ledger Fabric, and AI integrations. 
-                  Proven track record in delivering scalable solutions and leading tech teams to success.
+                  I learn by staying hands-on, driven by deep curiosity and grounded in patience. 
+                  This mindset shapes my engineering thought process and everything else I do—whether architecting scalable software, exploring off-beat regions as a solo traveler, or learning a new acoustic instrument. 
+                  I embrace unpredictable environments with total commitment, making me highly adaptable for fast-paced, remote, or global roles.
                 </p>
 
                 {/* Contact Info */}
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start text-sm">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin size={16} className="text-portfolio-accent" />
-                    <span>Bangalore, KA, India</span>
+                    <span>India | Open to Remote & Relocation</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Phone size={16} className="text-portfolio-accent" />
-                    <span>+91 899.950.9155</span>
+                    <span>+91 967.330.5368</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Mail size={16} className="text-portfolio-accent" />
-                    <span>abhay.verma@hotmail.com</span>
+                    <span>aabhay.v@gmail.com</span>
                   </div>
                 </div>
 
@@ -110,7 +112,7 @@ const Hero = () => {
                   className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300"
                 >
                   <a href="https://github.com/abhayverma" target="_blank" rel="noopener noreferrer">
-                    <SiGithub size={24} />
+                    <FaGithub size={24} />
                   </a>
                 </Button>
 
@@ -121,7 +123,7 @@ const Hero = () => {
                   className="text-muted-foreground hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300"
                 >
                   <a href="https://www.linkedin.com/in/abhayverma" target="_blank" rel="noopener noreferrer">
-                    <SiLinkedin size={24} />
+                    <FaLinkedin size={24} />
                   </a>
                 </Button>
 
@@ -142,8 +144,8 @@ const Hero = () => {
             {/* Stats Cards - Takes up 5 columns */}
             <div className="lg:col-span-5 animate-fade-in-right">
               <div className="grid grid-cols-2 gap-4 md:gap-6 max-w-md mx-auto lg:max-w-none">
-                {stats.map((stat, index) => (
-                  <Card key={index} className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/80 hover:shadow-glow transition-all duration-300 group">
+                {stats.map((stat) => (
+                  <Card key={stat.label} className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/80 hover:shadow-glow transition-all duration-300 group">
                     <CardContent className="p-4 md:p-6 text-center">
                       <div className="text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-portfolio-accent transition-colors">
                         {stat.value}

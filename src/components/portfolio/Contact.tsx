@@ -6,19 +6,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
-import { SiLinkedin } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
-import qrImage from "@/assets/qr-coffee.png";
 
 const SERVICE_ID = "service_gwat0nd";
 const TEMPLATE_ID = "template_9cc74w8";
 const PUBLIC_KEY = "jTBi5oQMY7KVsBj1N";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "abhay.verma@hotmail.com", action: "mailto:abhay.verma@hotmail.com" },
-  { icon: Phone, label: "Phone", value: "+91 899.950.9155", action: "tel:+918999509155" },
-  { icon: MapPin, label: "Location", value: "Bangalore, KA, India", action: null },
-  { icon: SiLinkedin, label: "LinkedIn", value: "socialabhay", action: "https://linkedin.com/in/socialabhay" },
+  { icon: Mail, label: "Email", value: "aabhay.v@gmail.com", action: "mailto:aabhay.v@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 967.330.5368", action: "tel:+919673305368" },
+  { icon: MapPin, label: "Location", value: "India | Open to Remote & Relocation", action: null },
+  { icon: FaLinkedin, label: "LinkedIn", value: "Abhay Verma", action: "https://linkedin.com/in/socialabhay" },
 ];
 
 const services = [

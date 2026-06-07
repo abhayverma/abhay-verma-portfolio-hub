@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import react from "@vitejs/plugin-react"; // Uses native OXC compilers internally under Vite 8
+import path from "node:path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const enableTagger = mode === "development" && process.env.ENABLE_TAGGER !== "false";
 
@@ -18,10 +18,9 @@ export default defineConfig(({ mode }) => {
     ].filter(Boolean),
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        "@": path.resolve(import.meta.dirname, "./src"),
       },
     },
-    // ← important: dev + build sourcemaps to map bundle lines to your source
     build: {
       sourcemap: true,
     },

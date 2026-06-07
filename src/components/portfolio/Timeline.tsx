@@ -20,10 +20,10 @@ const Timeline = () => {
       title: "Solutions Architect (Contract)",
       company: "Zero Dimension Tech Solutions",
       period: "2023 – 2024",
-      location: "Bangalore, KA, India",
+      location: "India | Open to Remote & Relocation",
       description: "Architect scalable AWS solutions, integrating secure payment gateways like Stripe ensuring seamless transactions. Led development of high-performance Laravel and React apps, boosting user experience and conversion rates by 25%. Streamlined deployment processes with CI/CD pipelines, reducing deployment time by 30% and minimizing downtime.",
       technologies: ["Node.js", "ReactJS", "MySQL", "TypeScript", "Laravel", "Git", "Docker", "Express", "Winston", "Yup", "Parser", "JWT", "SNS", "Moment", "EJS", "Redux", "JSX", "ESLint", "Tsconfig", "CLI", "ClickUp", "CloudWatch Events", "AWS"],
-      isActive: true
+      isActive: false
     },
     {
       id: 3,
@@ -61,8 +61,8 @@ const Timeline = () => {
       company: "SKARMA",
       period: "2016 – 2018",
       location: "Mumbai, India",
-      description: "Developed chatbot for a football team using Facebook APIs, Dialogflow, Laravel, increasing user engagement by 60%. Designed e-commerce portals with API integrations using WordPress, enhancing online sales by 45%.",
-      technologies: ["PHP", "MySQL", "Laravel", "WordPress", "API.ai (Dialogflow)", "Watson", "Facebook SDK", "Google SDK", "Git", "Photoshop", "AWS"],
+      description: "Led full-stack development of e-commerce portals with tight API integrations, improving user engagement and increasing online sales.",
+      technologies: ["PHP", "MySQL", "Laravel", "WordPress", "AWS", "Git", "Photoshop"],
       isActive: false
     },
     {
@@ -83,7 +83,7 @@ const Timeline = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">Career Timeline</h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            11+ years of experience building scalable solutions across diverse domains including FinTech, Life Sciences, HR, and Supply Chain.
+            12+ Years of experience building scalable solutions across diverse domains including FinTech, Life Sciences, HR, and Supply Chain.
           </p>
         </div>
 
@@ -143,9 +143,9 @@ const Timeline = () => {
                       <div className="space-y-3">
                         <h4 className="font-semibold text-sm text-foreground">Technologies Used:</h4>
                         <div className="flex flex-wrap gap-1.5">
-                          {exp.technologies.map((tech, techIndex) => (
+                          {exp.technologies.map((tech) => (
                             <Badge 
-                              key={techIndex} 
+                              key={tech} 
                               variant="secondary" 
                               className="text-xs hover:bg-portfolio-accent hover:text-white transition-colors cursor-default"
                             >

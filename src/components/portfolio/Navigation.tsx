@@ -49,7 +49,7 @@ const Navigation = () => {
 
   const expandSection = (sectionId: string) => {
   // Fire a global event so CollapsibleSection knows it should expand
-  window.dispatchEvent(
+  globalThis.dispatchEvent(
     new CustomEvent("collapsible-section", { 
       detail: { id: sectionId, action: "expand" } 
     })
@@ -81,7 +81,6 @@ const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
     scrollToSection(item.id);
   };
-
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -141,7 +140,8 @@ const scrollToSection = (sectionId: string) => {
               variant="outline" 
               size="sm"
               className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-            onClick={downloadResume}>
+              onClick={downloadResume}
+            >
               <Download className="mr-2" size={16} />
               Resume
             </Button>
@@ -198,6 +198,7 @@ const scrollToSection = (sectionId: string) => {
                   <Button 
                     variant="outline" 
                     className="w-full border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                    onClick={downloadResume}
                   >
                     <Download className="mr-2" size={16} />
                     Download Resume

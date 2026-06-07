@@ -1,14 +1,19 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "abhay-verma-portfolio-hub",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "dev": "NODE_NO_WARNINGS=1 vite",
+    "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:favicon": "npm run dev -w apps/favicon-generator",
+    "build:favicon": "npm run build -w apps/favicon-generator"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -57,7 +62,7 @@
     "react-hook-form": "^7.53.0",
     "react-icons": "^5.5.0",
     "react-resizable-panels": "^2.1.3",
-    "react-router-dom": "^6.26.2",
+    "react-router-dom": "^7.17.0",
     "recharts": "^2.12.7",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
@@ -71,7 +76,7 @@
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitejs/plugin-react": "^6.0.2",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
@@ -82,6 +87,6 @@
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^8.0.16"
   }
 }
