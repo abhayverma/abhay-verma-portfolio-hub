@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@portfolio/shared-ui";
+import { Badge } from "@portfolio/shared-ui";
 import { GraduationCap, Award, BookOpen, Calendar, MapPin } from 'lucide-react';
 
 const Education = () => {

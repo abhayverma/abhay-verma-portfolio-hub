@@ -1,10 +1,10 @@
-import Navigation from "@/components/portfolio/Navigation";
+import { Navigation, Footer } from "@portfolio/shared-ui";
 import Hero from "@/components/portfolio/Hero";
 import Timeline from "@/components/portfolio/Timeline";
 import Projects from "@/components/portfolio/Projects";
+import MicroApps from "@/components/portfolio/MicroApps";
 import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
-import Footer from "@/components/portfolio/Footer";
 import Faq from "@/components/portfolio/Faq";
 import FloatingQR from "@/components/ui/FloatingQR";
 
@@ -23,6 +23,10 @@ const Index = () => {
 
         <section id="projects">
           <Projects />
+        </section>
+
+        <section id="microapps">
+          <MicroApps />
         </section>
 
         <section id="education">

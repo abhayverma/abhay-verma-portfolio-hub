@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@portfolio/shared-ui";
+import { Button } from "@portfolio/shared-ui";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@portfolio/shared-ui";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";

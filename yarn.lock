@@ -210,6 +210,13 @@
   resolved "https://registry.npmjs.org/@oxc-project/types/-/types-0.133.0.tgz"
   integrity sha512-KzkdCd6Uxqnf6l3HOw1xfatAlUURA0g14cvBYFyJ5SaNOQbOUvBr9PKArcPcrNIeRsBdgcUzOGrhKveVpvOIGA==
 
+"@portfolio/shared-ui@file:/Users/abhayv/Documents/workspace/abhay-verma-portfolio-hub/packages/shared-ui":
+  version "1.0.0"
+  resolved "file:packages/shared-ui"
+  dependencies:
+    clsx "^2.1.1"
+    tailwind-merge "^2.3.0"
+
 "@radix-ui/number@1.1.2":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@radix-ui/number/-/number-1.1.2.tgz"
@@ -2464,7 +2471,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tailwind-merge@^2.5.2:
+tailwind-merge@^2.3.0, tailwind-merge@^2.5.2:
   version "2.6.1"
   resolved "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.1.tgz"
   integrity sha512-Oo6tHdpZsGpkKG88HJ8RR1rg/RdnEkQEfMoEk2x1XRI3F1AxeU+ijRXpiVUF4UbLfcxxRGw6TbUINKYdWVsQTQ==

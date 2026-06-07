@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Coffee } from "lucide-react";
-import qrImage from "@/assets/qr-coffee.png";
+import { qrImage } from "@portfolio/shared-ui";
 
 const FloatingQR = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+    <div className="fixed bottom-24 right-2 z-50 flex flex-col items-end space-y-3">
       {/* QR Image Popup ABOVE */}
       {visible && (
         <div className="relative mb-3 w-56">
