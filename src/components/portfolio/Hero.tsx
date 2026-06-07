@@ -75,10 +75,6 @@ const Hero = () => {
                     <span>India | Open to Remote & Relocation</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Phone size={16} className="text-portfolio-accent" />
-                    <span>+91 967.330.5368</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
                     <Mail size={16} className="text-portfolio-accent" />
                     <span>aabhay.v@gmail.com</span>
                   </div>

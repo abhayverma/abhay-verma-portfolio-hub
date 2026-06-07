@@ -15,7 +15,6 @@ const PUBLIC_KEY = "jTBi5oQMY7KVsBj1N";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "aabhay.v@gmail.com", action: "mailto:aabhay.v@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+91 967.330.5368", action: "tel:+919673305368" },
   { icon: MapPin, label: "Location", value: "India | Open to Remote & Relocation", action: null },
   { icon: FaLinkedin, label: "LinkedIn", value: "Abhay Verma", action: "https://linkedin.com/in/socialabhay" },
 ];
