@@ -74,12 +74,6 @@ export const Footer = ({ mainDomain }: FooterProps) => {
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground transition-colors">
-                <Phone size={16} />
-                <a href="tel:+919673305368" className="hover:text-portfolio-accent transition-colors">
-                  +91 967.330.5368
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground transition-colors">
                 <MapPin size={16} />
                 <span>India | Open to Remote & Relocation</span>
               </div>
