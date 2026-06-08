@@ -6,7 +6,8 @@ function App() {
     <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
       
       {/* 1. Global Navigation */}
-      <Navigation />
+      {/* FIXED: Added currentApp and mainDomain to enable cross-subdomain redirection */}
+      <Navigation currentApp="Finance" mainDomain="https://abhayverma.com" />
 
       {/* 2. Micro-App Engine */}
       {/* The flex-grow ensures the footer stays at the bottom even on massive monitors */}
