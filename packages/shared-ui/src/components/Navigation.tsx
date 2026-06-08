@@ -5,6 +5,16 @@ import { useTheme } from "next-themes";
 
 const SCROLL_TO_SECTION_DELAY = 300;
 
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'timeline', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'microapps', label: 'Micro-Tools' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
+  { id: 'faq-section', label: 'FAQ' }
+];
+
 export interface NavigationProps {
   currentApp?: string; // E.g., "Finance" or "Resume"
   mainDomain?: string; // Pass "https://abhayverma.com" when using on subdomains
@@ -15,16 +25,6 @@ export const Navigation = ({ currentApp, mainDomain }: NavigationProps) => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'timeline', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'microapps', label: 'Micro-Tools' },
-    { id: 'education', label: 'Education' },
-    { id: 'contact', label: 'Contact' },
-    { id: 'faq-section', label: 'FAQ' }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +52,7 @@ export const Navigation = ({ currentApp, mainDomain }: NavigationProps) => {
     
     // If we are on a subdomain, route back to the main site
     if (mainDomain) {
-      window.location.href = `${mainDomain}/#${item.id}`;
+      globalThis.location.href = `${mainDomain}/#${item.id}`;
       return;
     }
 
@@ -74,6 +74,7 @@ export const Navigation = ({ currentApp, mainDomain }: NavigationProps) => {
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
+          {/* Logo Section */}
           <button
             type="button"
             onClick={() => handleNavItemClick({ id: 'home', label: 'Home' })}
@@ -87,6 +88,7 @@ export const Navigation = ({ currentApp, mainDomain }: NavigationProps) => {
             )}
           </button>
 
+          {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Button
@@ -101,19 +103,52 @@ export const Navigation = ({ currentApp, mainDomain }: NavigationProps) => {
             ))}
           </div>
 
+          {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center space-x-2">
             <Button variant="ghost" size="icon" onClick={toggleDarkMode} className="hover:text-portfolio-accent">
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
-            {/* Download directly from public resources */}
             <Button variant="outline" size="sm" asChild className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white">
               <a href="/resources/Abhay Verma Resume 2026.pdf" download="Abhay Verma Resume 2026.pdf">
                 <Download className="mr-2" size={16} /> Resume
               </a>
             </Button>
           </div>
+
+          {/* Mobile Hamburger Button */}
+          <div className="md:hidden flex items-center">
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="hover:text-portfolio-accent">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </Button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border shadow-lg py-4 px-6 flex flex-col space-y-4">
+          {navItems.map((item) => (
+            <Button
+              key={item.id}
+              variant="ghost"
+              className="justify-start w-full text-left"
+              onClick={() => handleNavItemClick(item)}
+            >
+              {item.label}
+            </Button>
+          ))}
+          <div className="flex items-center justify-between pt-4 border-t border-border">
+            <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </Button>
+            <Button variant="outline" size="sm" asChild className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white w-2/3">
+              <a href="/resources/Abhay Verma Resume 2026.pdf" download="Abhay Verma Resume 2026.pdf">
+                <Download className="mr-2" size={16} /> Resume
+              </a>
+            </Button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

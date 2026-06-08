@@ -18,8 +18,10 @@ export default defineConfig(({ mode }) => {
     ].filter(Boolean),
     resolve: {
       alias: {
-        "@": path.resolve(import.meta.dirname, "./src"),
-      },
+      "@/components/ui": path.resolve(__dirname, "./packages/shared-ui/src/components/ui"),
+      "@/lib/utils": path.resolve(__dirname, "./packages/shared-ui/src/lib/utils.ts"),
+      "@": path.resolve(__dirname, "./src"),
+    },
     },
     build: {
       sourcemap: true,

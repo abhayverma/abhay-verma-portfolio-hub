@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "ignoreDeprecations": "6.0",
+    "noEmit": true,
     "paths": {
       "@portfolio/shared-ui/*": ["./src/*"]
     }
