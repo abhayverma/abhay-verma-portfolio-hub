@@ -1,6 +1,15 @@
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Badge, Button } from "@portfolio/shared-ui";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Calculator, FileText, Globe, BookOpen, Image as ImageIcon, ExternalLink, Wrench } from "lucide-react";
+import { Calculator, Globe, BookOpen, Image as ImageIcon, ExternalLink, Wrench } from "lucide-react";
+
+const PHASES = {
+  COMPLETED: 'completed',
+  CURRENT: 'current',
+  PLANNED: 'planned',
+} as const;
+
+type AppPhase = typeof PHASES[keyof typeof PHASES];
 
 const microAppsData = [
   {
@@ -9,15 +18,15 @@ const microAppsData = [
     description: "Advanced financial projection engine calculating real-world inflation erosion and LTCG tax drag.",
     icon: <Calculator className="w-10 h-10 text-portfolio-accent" />,
     url: "https://finance.abhayverma.com",
-    status: "Building Now",
+    phase: PHASES.COMPLETED,
   },
   {
-    id: "resume",
-    title: "Page-Budget Resume Engine",
-    description: "Markdown-based document parser enforcing strict single-page print bounds for ATS-compliant resumes.",
-    icon: <FileText className="w-10 h-10 text-slate-400" />,
-    url: "https://resume.abhayverma.com",
-    status: "Planned",
+    id: "whois",
+    title: "Global Domain Oracle",
+    description: "WHOIS availability engine featuring AI-driven name suggestions, re-triggerable history cache, and granular delete controls.",
+    icon: <Globe className="w-10 h-10 text-slate-400" />,
+    url: "https://whois.abhayverma.com",
+    phase: PHASES.CURRENT,
   },
   {
     id: "visa",
@@ -25,7 +34,7 @@ const microAppsData = [
     description: "Client-side threshold calculator mapping current immigration salary limits for major EU/UK tech hubs.",
     icon: <Globe className="w-10 h-10 text-slate-400" />,
     url: "https://visa.abhayverma.com",
-    status: "Planned",
+    phase: PHASES.PLANNED,
   },
   {
     id: "wisdom",
@@ -33,7 +42,7 @@ const microAppsData = [
     description: "NLP matrix matching engine cross-referencing modern dilemmas with classical philosophical texts.",
     icon: <BookOpen className="w-10 h-10 text-slate-400" />,
     url: "https://wisdom.abhayverma.com",
-    status: "Planned",
+    phase: PHASES.PLANNED,
   },
   {
     id: "favicon",
@@ -41,7 +50,7 @@ const microAppsData = [
     description: "HTML5 canvas workstation for generating modern PWA manifests and live browser-tab UI simulations.",
     icon: <ImageIcon className="w-10 h-10 text-slate-400" />,
     url: "https://favicon.abhayverma.com",
-    status: "Planned",
+    phase: PHASES.PLANNED, // FIXED: Changed status to phase
   }
 ];
 
@@ -66,45 +75,72 @@ const MicroApps = () => {
         <div className="relative px-12">
           <Carousel opts={{ align: "start", loop: false }} className="w-full">
             <CarouselContent className="-ml-4">
-              {microAppsData.map((app) => (
-                <CarouselItem key={app.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <Card className="h-full bg-card border-border hover:border-portfolio-accent/50 transition-all duration-300 flex flex-col relative overflow-hidden group">
-                      
-                      <div className="absolute top-4 right-4 z-10">
-                        <Badge variant={app.status === "Building Now" ? "default" : "secondary"} 
-                               className={app.status === "Building Now" ? "bg-portfolio-accent text-white hover:bg-portfolio-accent/90" : "bg-secondary text-secondary-foreground border-transparent"}>
-                          {app.status}
-                        </Badge>
-                      </div>
+              {microAppsData.map((app) => {
+                // Derive semantic booleans for straightforward UI styling
+                const isCompleted = app.phase === PHASES.COMPLETED;
+                const isCurrent = app.phase === PHASES.CURRENT;
+                const isPlanned = app.phase === PHASES.PLANNED;
 
-                      <CardHeader>
-                        <div className="mb-4 p-3 bg-muted rounded-xl inline-block w-fit border border-border group-hover:scale-110 transition-transform duration-300">
-                          {app.icon}
+                return (
+                  <CarouselItem key={app.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1 h-full">
+                      <Card 
+                        className={`h-full bg-card transition-all duration-300 flex flex-col relative overflow-hidden group border-border
+                          ${isCurrent ? 'border-portfolio-accent/60 shadow-lg shadow-portfolio-accent/5 ring-1 ring-portfolio-accent/20' : 'hover:border-portfolio-accent/50'}`}
+                      >
+                        {/* Dynamic Badge Rendering */}
+                        <div className="absolute top-4 right-4 z-10">
+                          <Badge 
+                            variant={isCurrent ? "default" : "secondary"} 
+                            className={`font-medium tracking-wide
+                              ${isCurrent ? "bg-portfolio-accent text-white hover:bg-portfolio-accent/90 animate-pulse" : "bg-secondary text-secondary-foreground border-transparent"}
+                              ${isPlanned ? "opacity-60" : ""}`}
+                          >
+                            {isCompleted && "Completed"}
+                            {isCurrent && "Building Now"}
+                            {isPlanned && "Planned"}
+                          </Badge>
                         </div>
-                        <CardTitle className="text-xl text-foreground">{app.title}</CardTitle>
-                      </CardHeader>
-                      
-                      <CardContent className="flex-grow flex flex-col justify-between">
-                        <CardDescription className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                          {app.description}
-                        </CardDescription>
+
+                        <CardHeader>
+                          <div className={`mb-4 p-3 rounded-xl inline-block w-fit border transition-transform duration-300 group-hover:scale-105
+                            ${isCurrent ? "bg-portfolio-accent/10 border-portfolio-accent/20" : "bg-muted border-border"}`}
+                          >
+                            {/* Dynamically tint icon if current app */}
+                            {React.cloneElement(app.icon as React.ReactElement, {
+                              className: `w-10 h-10 ${isCurrent ? "text-portfolio-accent" : "text-slate-400"}`
+                            })}
+                          </div>
+                          <CardTitle className="text-xl text-foreground">{app.title}</CardTitle>
+                        </CardHeader>
                         
-                        <Button 
-                          asChild 
-                          variant="outline" 
-                          className="w-full border-border text-foreground hover:bg-portfolio-accent hover:text-white hover:border-portfolio-accent transition-all"
-                          disabled={app.status !== "Building Now"}
-                        >
-                          <a href={app.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                            Launch App <ExternalLink size={16} />
-                          </a>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
+                        <CardContent className="flex-grow flex flex-col justify-between">
+                          <CardDescription className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                            {app.description}
+                          </CardDescription>
+                          
+                          {/* Intelligently swap Button properties based on project timeline status */}
+                          <Button 
+                            asChild={!isPlanned} 
+                            variant={isCurrent ? "default" : "outline"} 
+                            className={`w-full transition-all
+                              ${isCurrent ? "bg-portfolio-accent text-white border-portfolio-accent hover:bg-portfolio-accent/90" : "border-border text-foreground hover:bg-portfolio-accent hover:text-white hover:border-portfolio-accent"}`}
+                            disabled={isPlanned}
+                          >
+                            {isPlanned ? (
+                              <span className="opacity-50">Coming Soon</span>
+                            ) : (
+                              <a href={app.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                                Launch App <ExternalLink size={16} />
+                              </a>
+                            )}
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                );
+              })}
             </CarouselContent>
             <CarouselPrevious className="hidden md:flex -left-12 bg-background border-border text-muted-foreground hover:text-white hover:bg-portfolio-accent transition-colors" />
             <CarouselNext className="hidden md:flex -right-12 bg-background border-border text-muted-foreground hover:text-white hover:bg-portfolio-accent transition-colors" />
