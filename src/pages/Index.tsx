@@ -7,8 +7,39 @@ import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
 import Faq from "@/components/portfolio/Faq";
 import FloatingQR from "@/components/ui/FloatingQR";
+import { useEffect } from 'react';
 
 const Index = () => {
+  useEffect(() => {
+    const handleExternalHashScroll = () => {
+      const hash = globalThis.location.hash;
+      if (!hash) return;
+
+      const targetId = hash.replace('#', '');
+      
+      // 1. Fire the custom event your layout expects to open sections
+      globalThis.dispatchEvent(
+        new CustomEvent("collapsible-section", { 
+          detail: { id: targetId, action: "expand" } 
+        })
+      );
+
+      // 2. Short timeout ensures elements are fully painted before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 350);
+    };
+
+    // Run immediately as the Index component hydration completes
+    handleExternalHashScroll();
+
+    // Also catch anytime the hash changes while staying on the same page
+    globalThis.addEventListener('hashchange', handleExternalHashScroll);
+    return () => globalThis.removeEventListener('hashchange', handleExternalHashScroll);
+  }, []);
   return (
     <div className="min-h-screen relative">
       <Navigation />

@@ -6,7 +6,10 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/components/ui/*": ["./packages/shared-ui/src/components/ui/*"],
+      "@/lib/utils": ["./packages/shared-ui/src/lib/utils.ts"],
+      "@/*": ["./src/*"],
+      "@portfolio/shared-ui/*": ["./packages/shared-ui/src/*"]
     },
     "noImplicitAny": false,
     "noUnusedParameters": false,
