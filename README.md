@@ -48,7 +48,7 @@ npm run dev
 
 **To run a specific micro-app (e.g., the Finance Tax Simulator):**
 ```sh
-npm run dev -w apps/tax-simulator
+npm run dev -w apps/<micro-app-name>
 ```
 The server will boot up with hot-reloading enabled. Open your browser and navigate to the local server URL provided in the terminal (typically `http://localhost:5173`).
 
@@ -59,7 +59,7 @@ npm run build
 ```
 To build a specific workspace micro-app:
 ```sh
-npm run build -w apps/tax-simulator
+npm run build -w apps/<micro-app-name>
 ```
 
 ---
@@ -71,4 +71,4 @@ Copyright (c) 2026 Abhay Verma. All rights reserved.
 This project and its source code are strictly proprietary. Unauthorized copying, modification, distribution, sub-licensing, or public use of these files, via any medium, is strictly prohibited.
 
 As per GitHub's Global Terms of Service, forking the repository for personal architectural viewing purposes within the GitHub ecosystem is permitted. However, no rights or explicit permissions are granted to copy, alter, execute, or redistribute the source code for external, commercial, or alternative personal deployment purposes.
-````</abhay-verma-portfolio-hub></https://github.com/abhayverma/abhay-verma-portfolio-hub>
+[abhay-verma-portfolio-hub](https://github.com/abhayverma/abhay-verma-portfolio-hub)
