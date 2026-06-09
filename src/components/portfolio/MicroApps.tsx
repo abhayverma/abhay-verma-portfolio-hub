@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Badge, Button } from "@portfolio/shared-ui";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Calculator, Globe, BookOpen, Image as ImageIcon, ExternalLink, Wrench } from "lucide-react";
+import { Calculator, Globe, BookOpen, ExternalLink, Wrench, Sprout } from "lucide-react";
 
 const PHASES = {
   COMPLETED: 'completed',
@@ -26,7 +26,7 @@ const microAppsData = [
     description: "WHOIS availability engine featuring AI-driven name suggestions, re-triggerable history cache, and granular delete controls.",
     icon: <Globe className="w-10 h-10 text-slate-400" />,
     url: "https://whois.abhayverma.com",
-    phase: PHASES.CURRENT,
+    phase: PHASES.COMPLETED,
   },
   {
     id: "visa",
@@ -34,7 +34,7 @@ const microAppsData = [
     description: "Client-side threshold calculator mapping current immigration salary limits for major EU/UK tech hubs.",
     icon: <Globe className="w-10 h-10 text-slate-400" />,
     url: "https://visa.abhayverma.com",
-    phase: PHASES.PLANNED,
+    phase: PHASES.CURRENT,
   },
   {
     id: "wisdom",
@@ -45,13 +45,13 @@ const microAppsData = [
     phase: PHASES.PLANNED,
   },
   {
-    id: "favicon",
-    title: "Next-Gen Favicon Studio",
-    description: "HTML5 canvas workstation for generating modern PWA manifests and live browser-tab UI simulations.",
-    icon: <ImageIcon className="w-10 h-10 text-slate-400" />,
-    url: "https://favicon.abhayverma.com",
-    phase: PHASES.PLANNED, // FIXED: Changed status to phase
-  }
+    id: "eco-oracle",
+    title: "EcoMap: Native Flora & Conservation Oracle",
+    description: "Geospatial engine integrating Google Maps and open biodiversity APIs to map native regional vegetation, tracking localized plant extinctions versus newly recorded species with verified public source lineages.",
+    icon: <Sprout className="w-10 h-10 text-emerald-500" />,
+    url: "https://eco.abhayverma.com",
+    phase: PHASES.PLANNED,
+  },
 ];
 
 const MicroApps = () => {
@@ -122,9 +122,8 @@ const MicroApps = () => {
                           {/* Intelligently swap Button properties based on project timeline status */}
                           <Button 
                             asChild={!isPlanned} 
-                            variant={isCurrent ? "default" : "outline"} 
-                            className={`w-full transition-all
-                              ${isCurrent ? "bg-portfolio-accent text-white border-portfolio-accent hover:bg-portfolio-accent/90" : "border-border text-foreground hover:bg-portfolio-accent hover:text-white hover:border-portfolio-accent"}`}
+                            variant="outline" 
+                            className="w-full transition-all border-border text-foreground hover:bg-portfolio-accent hover:text-white hover:border-portfolio-accent"
                             disabled={isPlanned}
                           >
                             {isPlanned ? (

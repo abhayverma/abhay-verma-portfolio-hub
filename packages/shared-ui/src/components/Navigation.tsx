@@ -109,7 +109,7 @@ export const Navigation = ({ currentApp, mainDomain }: NavigationProps) => {
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
             <Button variant="outline" size="sm" asChild className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white">
-              <a href="/resources/Abhay Verma Resume 2026.pdf" download="Abhay Verma Resume 2026.pdf">
+              <a href="https://abhayverma.com/resources/Abhay Verma Resume 2026.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2" size={16} /> Resume
               </a>
             </Button>

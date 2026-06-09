@@ -27,11 +27,6 @@
   resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz"
   integrity sha512-N3zl+lxHCifgIlcMUP5016ESkeQjLj/959RxxNYIthIg+CQHInujFuXeWbWMgnTo4cp5XVHqFPmpyu9J65C1Yg==
 
-"@esbuild/darwin-arm64@0.28.0":
-  version "0.28.0"
-  resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.28.0.tgz"
-  integrity sha512-0T+A9WZm+bZ84nZBtk1ckYsOvyA3x7e2Acj1KdVfV4/2tdG4fzUp91YHx+GArWLtwqp77pBXVCPn2We7Letr0Q==
-
 "@eslint-community/eslint-utils@^4.8.0", "@eslint-community/eslint-utils@^4.9.1":
   version "4.9.1"
   resolved "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.9.1.tgz"
@@ -225,6 +220,14 @@
 "@portfolio/tax-simulator@file:/Users/abhayv/Documents/workspace/abhay-verma-portfolio-hub/apps/tax-simulator":
   version "1.0.0"
   resolved "file:apps/tax-simulator"
+  dependencies:
+    "@portfolio/shared-ui" "*"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
+"@portfolio/whois-oracle@file:/Users/abhayv/Documents/workspace/abhay-verma-portfolio-hub/apps/whois-oracle":
+  version "1.0.0"
+  resolved "file:apps/whois-oracle"
   dependencies:
     "@portfolio/shared-ui" "*"
     react "^18.2.0"
@@ -1456,7 +1459,7 @@ esbuild@^0.21.3:
     "@esbuild/win32-ia32" "0.21.5"
     "@esbuild/win32-x64" "0.21.5"
 
-esbuild@^0.25.0:
+esbuild@^0.25.1:
   version "0.25.12"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz"
   integrity sha512-bbPBYYrtZbkt6Os6FiTLCTFxvq4tt3JKall1vRwshA3fdVztsLAatFaZobhkBC8/BrPetoa0oksYoKXoG4ryJg==
@@ -1487,38 +1490,6 @@ esbuild@^0.25.0:
     "@esbuild/win32-arm64" "0.25.12"
     "@esbuild/win32-ia32" "0.25.12"
     "@esbuild/win32-x64" "0.25.12"
-
-"esbuild@^0.27.0 || ^0.28.0":
-  version "0.28.0"
-  resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.28.0.tgz"
-  integrity sha512-sNR9MHpXSUV/XB4zmsFKN+QgVG82Cc7+/aaxJ8Adi8hyOac+EXptIp45QBPaVyX3N70664wRbTcLTOemCAnyqw==
-  optionalDependencies:
-    "@esbuild/aix-ppc64" "0.28.0"
-    "@esbuild/android-arm" "0.28.0"
-    "@esbuild/android-arm64" "0.28.0"
-    "@esbuild/android-x64" "0.28.0"
-    "@esbuild/darwin-arm64" "0.28.0"
-    "@esbuild/darwin-x64" "0.28.0"
-    "@esbuild/freebsd-arm64" "0.28.0"
-    "@esbuild/freebsd-x64" "0.28.0"
-    "@esbuild/linux-arm" "0.28.0"
-    "@esbuild/linux-arm64" "0.28.0"
-    "@esbuild/linux-ia32" "0.28.0"
-    "@esbuild/linux-loong64" "0.28.0"
-    "@esbuild/linux-mips64el" "0.28.0"
-    "@esbuild/linux-ppc64" "0.28.0"
-    "@esbuild/linux-riscv64" "0.28.0"
-    "@esbuild/linux-s390x" "0.28.0"
-    "@esbuild/linux-x64" "0.28.0"
-    "@esbuild/netbsd-arm64" "0.28.0"
-    "@esbuild/netbsd-x64" "0.28.0"
-    "@esbuild/openbsd-arm64" "0.28.0"
-    "@esbuild/openbsd-x64" "0.28.0"
-    "@esbuild/openharmony-arm64" "0.28.0"
-    "@esbuild/sunos-x64" "0.28.0"
-    "@esbuild/win32-arm64" "0.28.0"
-    "@esbuild/win32-ia32" "0.28.0"
-    "@esbuild/win32-x64" "0.28.0"
 
 escalade@^3.2.0:
   version "3.2.0"
