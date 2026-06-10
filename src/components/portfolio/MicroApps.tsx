@@ -34,7 +34,7 @@ const microAppsData = [
     description: "Client-side threshold calculator mapping current immigration salary limits for major EU/UK tech hubs.",
     icon: <Globe className="w-10 h-10 text-slate-400" />,
     url: "https://visa.abhayverma.com",
-    phase: PHASES.CURRENT,
+    phase: PHASES.COMPLETED,
   },
   {
     id: "wisdom",
@@ -42,7 +42,7 @@ const microAppsData = [
     description: "NLP matrix matching engine cross-referencing modern dilemmas with classical philosophical texts.",
     icon: <BookOpen className="w-10 h-10 text-slate-400" />,
     url: "https://wisdom.abhayverma.com",
-    phase: PHASES.PLANNED,
+    phase: PHASES.CURRENT,
   },
   {
     id: "eco-oracle",
