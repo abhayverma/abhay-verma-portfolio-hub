@@ -42,7 +42,7 @@ const microAppsData = [
     description: "NLP matrix matching engine cross-referencing modern dilemmas with classical philosophical texts.",
     icon: <BookOpen className="w-10 h-10 text-slate-400" />,
     url: "https://wisdom.abhayverma.com",
-    phase: PHASES.CURRENT,
+    phase: PHASES.COMPLETED,
   },
   {
     id: "eco-oracle",

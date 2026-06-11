@@ -1,0 +1,15 @@
+{
+  "id": "buddhism",
+  "name": "Secular Buddhism",
+  "corePrinciple": "Impermanence & The Monkey Mind",
+  "primaryKeywords": ["doomscrolling", "phone", "notifications", "distracted", "addicted", "overwhelmed", "focus", "scrolling", "adhd"],
+  "secondaryKeywords": ["feed", "social", "tired", "noise", "attention", "checking", "tabs", "screen", "apps"],
+  "quotes": [
+    { "text": "The mind is like water. When it's turbulent, it's difficult to see. When it's calm, everything becomes clear.", "author": "Prasad", "source": "Dhammapada Commentary" },
+    { "text": "You only lose what you cling to.", "author": "Gautama Buddha", "source": "Traditional" }
+  ],
+  "modernReframes": [
+    "The digital ecosystem is designed to hijack your attention by turning notifications into synthetic crises. Recognize that the urge to check your phone is a temporary neurochemical wave. Observe the urge without executing it.",
+    "Your fractured focus is the result of clinging to every piece of incoming data. Practice letting notifications wash over you without immediately reacting. The urgency is an illusion."
+  ]
+}
