@@ -1,0 +1,15 @@
+{
+  "id": "taoism",
+  "name": "Taoism",
+  "corePrinciple": "Wu Wei (Effortless Action)",
+  "primaryKeywords": ["hustle", "exhausted", "grind", "rushed", "force", "struggle", "pressure", "compete", "pushing"],
+  "secondaryKeywords": ["fast", "win", "pace", "behind", "catching up", "momentum", "treadmill", "race"],
+  "quotes": [
+    { "text": "Nature does not hurry, yet everything is accomplished.", "author": "Lao Tzu", "source": "Tao Te Ching" },
+    { "text": "A good traveler has no fixed plans and is not intent on arriving.", "author": "Lao Tzu", "source": "Tao Te Ching" }
+  ],
+  "modernReframes": [
+    "You are exhausting yourself by trying to swim upstream against structural realities. Wu Wei is not passivity; it is finding the natural axis of momentum. Adjust your sails to align with the current instead of relying on raw fatigue.",
+    "The tech 'grind' glorifies unnecessary friction. If a project or career path feels like an endless uphill battle, step back. Find the path of least resistance where your natural skills compound effortlessly."
+  ]
+}

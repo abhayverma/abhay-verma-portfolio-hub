@@ -1,0 +1,15 @@
+{
+  "id": "stoicism",
+  "name": "Stoicism",
+  "corePrinciple": "The Dichotomy of Control",
+  "primaryKeywords": ["control", "anxious", "worry", "panic", "boss", "fail", "stress", "fired", "layoffs", "expectations"],
+  "secondaryKeywords": ["tomorrow", "what if", "performance", "market", "economy", "rumors", "opinion", "judged", "future"],
+  "quotes": [
+    { "text": "We suffer more often in imagination than in reality.", "author": "Seneca", "source": "Letters from a Stoic" },
+    { "text": "You have power over your mind - not outside events. Realize this, and you will find strength.", "author": "Marcus Aurelius", "source": "Meditations" }
+  ],
+  "modernReframes": [
+    "Identify the absolute boundaries of your agency. Your coworker's opinion, the algorithm's volatility, or the corporate layoff are outside your perimeter. Your intentional preparation and internal response are entirely yours. Relinquish the rest.",
+    "The anxiety you feel about the upcoming launch is a projection of a future that hasn't happened. Pull your focus back to the code you can write today."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "existentialism",
+  "name": "Existentialism",
+  "corePrinciple": "Existence Precedes Essence",
+  "primaryKeywords": ["meaningless", "burnout", "imposter", "purpose", "identity", "empty", "authentic", "fake", "fraud"],
+  "secondaryKeywords": ["why", "corporate", "system", "role", "title", "promotion", "ladder", "value", "lost"],
+  "quotes": [
+    { "text": "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.", "author": "Jean-Paul Sartre", "source": "Being and Nothingness" },
+    { "text": "He who has a why to live for can bear almost any how.", "author": "Friedrich Nietzsche", "source": "Twilight of the Idols" }
+  ],
+  "modernReframes": [
+    "Your imposter syndrome stems from waiting for a system or a job title to define your validity. Existentialism says no pre-baked script exists. You aren't an imposter; you are completely free to define your own parameters of success.",
+    "The burnout you feel isn't just exhaustion; it's a crisis of meaning. Stop looking for the corporation to provide your 'Why'. You must architect your own purpose outside the sprint cycle."
+  ]
+}
