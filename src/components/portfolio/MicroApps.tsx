@@ -47,10 +47,10 @@ const microAppsData = [
   {
     id: "eco-oracle",
     title: "EcoMap: Native Flora & Conservation Oracle",
-    description: "Geospatial engine integrating Google Maps and open biodiversity APIs to map native regional vegetation, tracking localized plant extinctions versus newly recorded species with verified public source lineages.",
+    description: "Geospatial engine integrating OpenStreetMap and open biodiversity APIs to map native regional vegetation, tracking localized plant extinctions versus newly recorded species with verified public source lineages.",
     icon: <Sprout className="w-10 h-10 text-emerald-500" />,
-    url: "https://eco.abhayverma.com",
-    phase: PHASES.PLANNED,
+    url: "https://ecomap.abhayverma.com",
+    phase: PHASES.COMPLETED,
   },
 ];
 
